@@ -1,0 +1,9 @@
+image: maven:latest
+
+build:
+  script:
+    - mvn -T 11 clean compile
+
+test:
+  script:
+    - mvn -T 11 test
