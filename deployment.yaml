@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-distribution
+spec:
+  selector:
+    matchLabels:
+      app: distributor
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: distributor
+    spec:
+      containers:
+        - name: distributor
+          image: service-distributor:latest
+          ports:
+            - containerPort: 8002
