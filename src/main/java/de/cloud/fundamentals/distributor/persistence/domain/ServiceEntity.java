@@ -12,6 +12,10 @@ public class ServiceEntity {
     private String command;
     private String url;
 
+    public ServiceEntity() {
+        super();
+    }
+
     public ServiceEntity(String command, String url) {
         this.command = command;
         this.url = url;
