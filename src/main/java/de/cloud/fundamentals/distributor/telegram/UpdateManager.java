@@ -1,6 +1,5 @@
 package de.cloud.fundamentals.distributor.telegram;
 
-import de.cloud.fundamentals.distributor.persistence.dao.ClientDao;
 import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.rest.RequestCallback;
 import de.cloud.fundamentals.distributor.rest.dto.Answer;
@@ -21,8 +20,8 @@ public class UpdateManager {
     private final ServiceDistributor distributor;
 
     @Autowired
-    public UpdateManager(ClientDao dao) {
-        this.distributor = new ServiceDistributor(dao);
+    public UpdateManager(ServiceDistributor serviceDistributor) {
+        this.distributor = serviceDistributor;
     }
 
     public void setRequestCallback(RequestCallback callback) {
