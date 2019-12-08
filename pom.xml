@@ -12,7 +12,7 @@
 	<artifactId>Distributor</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Distributor</name>
-	<description>this service distributes updates from telegram api to microservices and manages user sessions</description>
+	<description>this serviceEntity distributes updates from telegram api to microservices and manages user sessions</description>
 
 	<properties>
 		<java.version>11</java.version>

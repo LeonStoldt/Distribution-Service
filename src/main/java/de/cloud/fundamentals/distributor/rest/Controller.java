@@ -1,6 +1,6 @@
 package de.cloud.fundamentals.distributor.rest;
 
-import de.cloud.fundamentals.distributor.bo.Service;
+import de.cloud.fundamentals.distributor.persistence.domain.ServiceEntity;
 import de.cloud.fundamentals.distributor.persistence.repo.ServiceRepository;
 import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.telegram.UpdateManager;
@@ -52,28 +52,28 @@ public class Controller {
     }
 
     @PostMapping("/service")
-    public ResponseEntity addService(@RequestBody Service service) {
-        serviceRepository.save(service);
+    public ResponseEntity addService(@RequestBody ServiceEntity serviceEntity) {
+        serviceRepository.save(serviceEntity);
         return new ResponseEntity(HttpStatus.OK);
     }
 
     @PutMapping("/service")
-    public ResponseEntity updateService(@RequestBody Service service) {
-        Optional<Service> optionalService = serviceRepository.findByCommand(service.getCommand());
+    public ResponseEntity updateService(@RequestBody ServiceEntity serviceEntity) {
+        Optional<ServiceEntity> optionalService = serviceRepository.findByCommand(serviceEntity.getCommand());
         if (optionalService.isPresent()) {
-            Service oldService = optionalService.get();
-            oldService.setUrl(service.getUrl());
-            serviceRepository.save(oldService);
-            return new ResponseEntity<>(oldService, HttpStatus.OK);
+            ServiceEntity oldServiceEntity = optionalService.get();
+            oldServiceEntity.setUrl(serviceEntity.getUrl());
+            serviceRepository.save(oldServiceEntity);
+            return new ResponseEntity<>(oldServiceEntity, HttpStatus.OK);
         } else {
             return new ResponseEntity(HttpStatus.NOT_FOUND);
         }
     }
 
     @DeleteMapping("/service")
-    public ResponseEntity deleteService(@RequestBody Service service) {
-        if (serviceRepository.findById(service.getId()).isPresent()) {
-            serviceRepository.delete(service);
+    public ResponseEntity deleteService(@RequestBody ServiceEntity serviceEntity) {
+        if (serviceRepository.findById(serviceEntity.getId()).isPresent()) {
+            serviceRepository.delete(serviceEntity);
             return new ResponseEntity(HttpStatus.OK);
         } else {
             return new ResponseEntity(HttpStatus.NOT_FOUND);

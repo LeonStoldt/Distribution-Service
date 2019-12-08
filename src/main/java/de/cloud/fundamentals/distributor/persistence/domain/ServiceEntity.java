@@ -1,4 +1,4 @@
-package de.cloud.fundamentals.distributor.bo;
+package de.cloud.fundamentals.distributor.persistence.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Service {
+public class ServiceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,7 +14,7 @@ public class Service {
     private String command;
     private String url;
 
-    public Service(String command, String url) {
+    public ServiceEntity(String command, String url) {
         this.command = command;
         this.url = url;
     }
