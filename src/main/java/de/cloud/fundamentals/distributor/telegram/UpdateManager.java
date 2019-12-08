@@ -1,9 +1,9 @@
 package de.cloud.fundamentals.distributor.telegram;
 
 import de.cloud.fundamentals.distributor.persistence.dao.ClientDao;
-import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.rest.RequestCallback;
 import de.cloud.fundamentals.distributor.rest.dto.Answer;
+import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.userfeedback.I18n;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,8 +25,7 @@ public class UpdateManager {
         this.distributor = new ServiceDistributor(dao);
     }
 
-
-        public void setRequestCallback(RequestCallback callback) {
+    public void setRequestCallback(RequestCallback callback) {
         distributor.setCallback(callback);
     }
 
