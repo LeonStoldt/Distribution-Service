@@ -3,12 +3,10 @@ package de.cloud.fundamentals.distributor.persistence.domain;
 import com.pengrad.telegrambot.model.Chat;
 import de.cloud.fundamentals.distributor.bo.Client;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name="clients")
 public class ClientEntity {
 
     @Id
