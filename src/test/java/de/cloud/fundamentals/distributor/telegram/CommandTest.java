@@ -32,15 +32,17 @@ class CommandTest {
         String actual = Command.getCommandList();
 
         //then
-        String expected =
-                "/start - Beim Bot registrieren bzw. Bot aktivieren\n" +
+        String expected = "/start - Beim Bot registrieren bzw. Bot aktivieren\n" +
                         "/hilfe - Ausgeben aller verfügbaren Befehle\n" +
                         "/stop - Beim Bot abmelden\n" +
                         "/delete - Gespeicherte Daten löschen lassen\n" +
-                        "/info - Ausgeben der gesamten gespeicherten Dateien des Users\n" +
+                        "/info - Ausgeben der gesamten gespeicherten Daten des Users\n" +
                         "/nb | /nordbahn - Auskunft der aktuellen Fahrzeiten der Nordbahn für einen bestimmten Bahnhof\n" +
                         "/shorten | /shorturl - Kürzen einer Url, die hinter dem Befehl angegeben wird\n" +
-                        "/translate - Übersetzt Wörter und ganze Sätze ins Deutsche";
+                        "/translate - Übersetzt Wörter und ganze Sätze ins Deutsche\n" +
+                        "/temp | /temperate - Gibt die aktuelle Temperatur in einer Stadt\n" +
+                        "/luftfeuchtigkeit | /humidity - Gibt die aktuelle Luftfeuchtigkeit in einer Stadt zurück\n" +
+                        "/wind - Gibt aktuelle Wind-Daten einer Stadt zurück";
         assertEquals(actual, expected);
     }
 }
