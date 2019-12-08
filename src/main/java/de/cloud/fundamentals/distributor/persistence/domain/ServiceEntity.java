@@ -1,43 +1,26 @@
 package de.cloud.fundamentals.distributor.persistence.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 @Table(name="services")
+@AllArgsConstructor
 public class ServiceEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Getter
     private Long id;
+    @Getter
+    @Setter
     private String command;
+    @Getter
+    @Setter
     private String url;
-
-    public ServiceEntity() {
-        super();
-    }
-
-    public ServiceEntity(String command, String url) {
-        this.command = command;
-        this.url = url;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getCommand() {
-        return command;
-    }
-
-    public void setCommand(String command) {
-        this.command = command;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
 }
