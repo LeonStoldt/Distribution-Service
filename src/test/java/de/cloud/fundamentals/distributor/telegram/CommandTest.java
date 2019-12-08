@@ -40,7 +40,7 @@ class CommandTest {
                         "/nb | /nordbahn - Auskunft der aktuellen Fahrzeiten der Nordbahn für einen bestimmten Bahnhof\n" +
                         "/shorten | /shorturl - Kürzen einer Url, die hinter dem Befehl angegeben wird\n" +
                         "/translate - Übersetzt Wörter und ganze Sätze ins Deutsche\n" +
-                        "/temp | /temperate - Gibt die aktuelle Temperatur in einer Stadt\n" +
+                        "/temp | /temperature - Gibt die aktuelle Temperatur in einer Stadt\n" +
                         "/luftfeuchtigkeit | /humidity - Gibt die aktuelle Luftfeuchtigkeit in einer Stadt zurück\n" +
                         "/wind - Gibt aktuelle Wind-Daten einer Stadt zurück";
         assertEquals(actual, expected);

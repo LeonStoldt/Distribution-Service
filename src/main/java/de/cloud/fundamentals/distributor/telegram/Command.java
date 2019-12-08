@@ -15,7 +15,7 @@ public enum Command {
     NB("description.command.nb", "/nb", "/nordbahn"),
     SHORTEN_URL("description.command.shorten-url", "/shorten", "/shorturl"),
     TRANSLATE("description.command.translate", "/translate"),
-    TEMPERATURE("description.command.temperature", "/temp", "/temperate"),
+    TEMPERATURE("description.command.temperature", "/temp", "/temperature"),
     HUMIDITY("description.command.humidity", "/luftfeuchtigkeit", "/humidity"),
     WIND("description.command.wind", "/wind"),
     NO_COMMAND("", "");
