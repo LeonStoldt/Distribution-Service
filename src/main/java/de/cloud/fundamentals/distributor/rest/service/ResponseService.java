@@ -5,9 +5,9 @@ import de.cloud.fundamentals.distributor.telegram.Command;
 import java.util.Arrays;
 
 public enum ResponseService {
-    NORDBAHN("http://localhost:8003/api", Command.NB),
-    URL_SHORTENER("http://localhost:8005/api", Command.SHORTEN_URL),
-    TRANSLATER("http://localhost:8004/api", Command.TRANSLATE);
+    NORDBAHN("http://nordbahn:8003/api", Command.NB),
+    URL_SHORTENER("http://urlshortener:8005/api", Command.SHORTEN_URL),
+    TRANSLATER("http://translate:8004/api", Command.TRANSLATE);
 
     private final String url;
     private final Command command;
