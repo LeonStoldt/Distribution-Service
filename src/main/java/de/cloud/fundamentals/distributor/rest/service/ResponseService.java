@@ -5,9 +5,12 @@ import de.cloud.fundamentals.distributor.telegram.Command;
 import java.util.Arrays;
 
 public enum ResponseService {
-    NORDBAHN("http://nordbahn:8003/api", Command.NB),
-    URL_SHORTENER("http://urlshortener:8005/api", Command.SHORTEN_URL),
-    TRANSLATER("http://translate:8004/api", Command.TRANSLATE);
+    NORDBAHN("http://nordbahn:8080/api", Command.NB),
+    URL_SHORTENER("http://urlshortener:8080/api", Command.SHORTEN_URL),
+    TRANSLATER("http://translate:8080/api", Command.TRANSLATE),
+    TEMPERATURE("http://weather:8080/weather/temperature", Command.TEMPERATURE),
+    HUMIDITY("http://weather:8080/weather/temperature", Command.HUMIDITY),
+    WIND("http://weather:8080/weather/temperature", Command.WIND);
 
     private final String url;
     private final Command command;

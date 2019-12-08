@@ -2,11 +2,10 @@ package de.cloud.fundamentals.distributor.telegram;
 
 import de.cloud.fundamentals.distributor.bo.Client;
 import de.cloud.fundamentals.distributor.persistence.dao.ClientDao;
-import de.cloud.fundamentals.distributor.persistence.domain.ServiceEntity;
-import de.cloud.fundamentals.distributor.persistence.repo.ServiceRepository;
 import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.rest.RequestCallback;
 import de.cloud.fundamentals.distributor.rest.dto.Answer;
+import de.cloud.fundamentals.distributor.rest.service.ResponseService;
 import de.cloud.fundamentals.distributor.userfeedback.I18n;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +17,10 @@ public class ServiceDistributor {
     private static final I18n USER_FEEDBACK = new I18n();
 
     private final ClientDao dao;
-    private final ServiceRepository serviceRepository;
     private RequestCallback callback;
 
-    public ServiceDistributor(ClientDao dao, ServiceRepository serviceRepository) {
+    public ServiceDistributor(ClientDao dao) {
         this.dao = dao;
-        this.serviceRepository = serviceRepository;
     }
 
     public void setCallback(RequestCallback callback) {
@@ -94,14 +91,13 @@ public class ServiceDistributor {
                 answer.setMessage(USER_FEEDBACK.get("answer.command.stop"));
                 break;
             default:
-                Optional<ServiceEntity> optionalServiceEntity = serviceRepository.findByCommand(command.toString());
-                if (optionalServiceEntity.isPresent()) {
-                    ServiceEntity serviceEntity = optionalServiceEntity.get();
-                    String response = callback.getResponseFor(serviceEntity.getUrl(), getParams(details.getMessage(), command));
+                if (!command.equals(Command.NO_COMMAND)) {
+                    String response = callback.getResponseFor(ResponseService.urlFor(command), getParams(details.getMessage(), command));
                     answer.setMessage(response);
                 } else {
                     answer.setMessage(USER_FEEDBACK.get("answer.default"));
                 }
+
         }
     }
 
