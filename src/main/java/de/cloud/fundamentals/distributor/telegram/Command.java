@@ -15,9 +15,11 @@ public enum Command {
     NB("description.command.nb", "/nb", "/nordbahn"),
     SHORTEN_URL("description.command.shorten-url", "/shorten", "/shorturl"),
     TRANSLATE("description.command.translate", "/translate"),
-    TEMPERATURE("description.command.temperature", "/temp", "/temperature"),
+    TEMPERATURE("description.command.temperature", "/temperatur", "/temp"),
     HUMIDITY("description.command.humidity", "/luftfeuchtigkeit", "/humidity"),
     WIND("description.command.wind", "/wind"),
+    VISIBILITY("description.command.visibility", "/sichtweite", "/sicht"),
+    WIKI("description.command.wiki", "/wiki"),
     NO_COMMAND("", "");
 
     private static final I18n USER_FEEDBACK = new I18n();

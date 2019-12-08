@@ -9,8 +9,10 @@ public enum ResponseService {
     URL_SHORTENER("http://urlshortener:8080/api", Command.SHORTEN_URL),
     TRANSLATER("http://translate:8080/api", Command.TRANSLATE),
     TEMPERATURE("http://weather:8080/weather/temperature", Command.TEMPERATURE),
-    HUMIDITY("http://weather:8080/weather/temperature", Command.HUMIDITY),
-    WIND("http://weather:8080/weather/temperature", Command.WIND);
+    HUMIDITY("http://weather:8080/weather/humidity", Command.HUMIDITY),
+    WIND("http://weather:8080/weather/wind", Command.WIND),
+    VISIBILITY("http://weather:8080/weather/visibility", Command.VISIBILITY),
+    WIKI("http://wikipedia:8080/api", Command.WIKI);
 
     private final String url;
     private final Command command;
