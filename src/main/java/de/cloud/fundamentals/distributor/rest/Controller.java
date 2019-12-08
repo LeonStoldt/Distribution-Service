@@ -29,12 +29,10 @@ public class Controller {
     private static final String JSON = MediaType.APPLICATION_JSON_VALUE;
 
     private final UpdateManager updateManager;
-    private final ServiceRepository serviceRepository;
 
     @Autowired
-    public Controller(UpdateManager updateManager, ServiceRepository serviceRepository) {
+    public Controller(UpdateManager updateManager) {
         this.updateManager = updateManager;
-        this.serviceRepository = serviceRepository;
         updateManager.setRequestCallback(this::getResponseFor);
     }
 
@@ -49,35 +47,6 @@ public class Controller {
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(updateManager.onUpdateReceived(details));
-    }
-
-    @PostMapping("/service")
-    public ResponseEntity addService(@RequestBody ServiceEntity serviceEntity) {
-        serviceRepository.save(serviceEntity);
-        return new ResponseEntity(HttpStatus.OK);
-    }
-
-    @PutMapping("/service")
-    public ResponseEntity updateService(@RequestBody ServiceEntity serviceEntity) {
-        Optional<ServiceEntity> optionalService = serviceRepository.findByCommand(serviceEntity.getCommand());
-        if (optionalService.isPresent()) {
-            ServiceEntity oldServiceEntity = optionalService.get();
-            oldServiceEntity.setUrl(serviceEntity.getUrl());
-            serviceRepository.save(oldServiceEntity);
-            return new ResponseEntity<>(oldServiceEntity, HttpStatus.OK);
-        } else {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
-    }
-
-    @DeleteMapping("/service")
-    public ResponseEntity deleteService(@RequestBody ServiceEntity serviceEntity) {
-        if (serviceRepository.findById(serviceEntity.getId()).isPresent()) {
-            serviceRepository.delete(serviceEntity);
-            return new ResponseEntity(HttpStatus.OK);
-        } else {
-            return new ResponseEntity(HttpStatus.NOT_FOUND);
-        }
     }
 
     private String getResponseFor(String uri, String message) {
