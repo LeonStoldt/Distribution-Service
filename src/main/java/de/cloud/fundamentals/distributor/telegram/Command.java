@@ -19,7 +19,7 @@ public enum Command {
     HUMIDITY("description.command.humidity", "/luftfeuchtigkeit", "/humidity"),
     WIND("description.command.wind", "/wind"),
     VISIBILITY("description.command.visibility", "/sichtweite", "/sicht"),
-    WIKI("description.command.wiki", "/wiki"),
+    WIKI("description.command.wiki", "/wiki", "/lexikon"),
     NO_COMMAND("", "");
 
     private static final I18n USER_FEEDBACK = new I18n();
