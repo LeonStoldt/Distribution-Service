@@ -52,7 +52,9 @@ public class Controller {
             response = HttpClient
                     .newHttpClient()
                     .sendAsync(getPOSTRequest(uri, message), HttpResponse.BodyHandlers.ofString())
-                    .thenApply(HttpResponse::body)
+                    .thenApply(httpResponse -> HttpStatus.valueOf(httpResponse.statusCode()).equals(HttpStatus.OK)
+                            ? httpResponse.body()
+                            : USER_FEEDBACK.get("error.invalid-parameters"))
                     .get(30, TimeUnit.SECONDS);
 
         } catch (Exception e) {
