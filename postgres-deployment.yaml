@@ -1,0 +1,42 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.18.0 (06a2e56)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: postgres
+  name: postgres
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: postgres
+    spec:
+      containers:
+      - env:
+        - name: DB_NAME
+          value: telegram
+        - name: DB_PASS
+          value: telegram
+        - name: DB_USER
+          value: telegram
+        - name: DEBUG
+          value: "false"
+        image: sameersbn/postgresql:10-2
+        name: postgres
+        resources: {}
+        volumeMounts:
+        - mountPath: /var/lib/postgresql
+          name: postgres-claim0
+      restartPolicy: Always
+      volumes:
+      - name: postgres-claim0
+        persistentVolumeClaim:
+          claimName: postgres-claim0
+status: {}
