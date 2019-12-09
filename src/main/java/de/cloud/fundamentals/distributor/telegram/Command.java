@@ -19,6 +19,10 @@ public enum Command {
     HUMIDITY("description.command.humidity", "/luftfeuchtigkeit", "/humidity"),
     WIND("description.command.wind", "/wind"),
     VISIBILITY("description.command.visibility", "/sichtweite", "/sicht"),
+    PRESSURE("description.command.pressure", "/luftdruck", "/pressure"),
+    COORDINATES("description.command.coordinates", "/koordinaten", "/coords"),
+    SUNRISE("description.command.sunrise", "/sonnenaufgang", "/sunrise"),
+    SUNSET("description.command.sunset", "/sonnenuntergang", "/sunset"),
     WIKI("description.command.wiki", "/wiki", "/lexikon"),
     NO_COMMAND("", "");
 

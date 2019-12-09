@@ -44,6 +44,10 @@ class CommandTest {
                 "/luftfeuchtigkeit | /humidity - Gibt die aktuelle Luftfeuchtigkeit in einer Stadt zurück\n" +
                 "/wind - Gibt aktuelle Wind-Daten einer Stadt zurück\n" +
                 "/sichtweite | /sicht - Gibt die aktuelle Sichtweite in einer Stadt zurück\n" +
+                "/luftdruck | /pressure - Gibt den aktuellen Luftdruck in einer Stadt zurück\n" +
+                "/koordinaten | /coords - Gibt die Koordinaten einer Stadt zurück\n" +
+                "/sonnenaufgang | /sunrise - Gibt Uhrzeit des Sonnenaufgangs in einer Stadt zurück\n" +
+                "/sonnenuntergang | /sunset - Gibt Uhrzeit des Sonnenuntergangs in einer Stadt zurück\n" +
                 "/wiki | /lexikon - Gib einen Suchbegriff an und lasse dir die zugehörige Wikipedia-Seite anzeigen";
         assertEquals(actual, expected);
     }
