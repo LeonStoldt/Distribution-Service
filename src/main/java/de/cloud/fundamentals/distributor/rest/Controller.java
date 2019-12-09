@@ -1,7 +1,5 @@
 package de.cloud.fundamentals.distributor.rest;
 
-import de.cloud.fundamentals.distributor.persistence.domain.ServiceEntity;
-import de.cloud.fundamentals.distributor.persistence.repo.ServiceRepository;
 import de.cloud.fundamentals.distributor.rest.dto.RequestDetails;
 import de.cloud.fundamentals.distributor.telegram.UpdateManager;
 import de.cloud.fundamentals.distributor.userfeedback.I18n;
@@ -18,7 +16,6 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 @RestController
@@ -37,7 +34,7 @@ public class Controller {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/", produces = JSON)
+    @GetMapping("/")
     public String getStatus() {
         return "Distributor is active.";
     }
