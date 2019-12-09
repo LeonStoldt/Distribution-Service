@@ -33,16 +33,18 @@ class CommandTest {
 
         //then
         String expected = "/start - Beim Bot registrieren bzw. Bot aktivieren\n" +
-                        "/hilfe - Ausgeben aller verfügbaren Befehle\n" +
-                        "/stop - Beim Bot abmelden\n" +
-                        "/delete - Gespeicherte Daten löschen lassen\n" +
-                        "/info - Ausgeben der gesamten gespeicherten Daten des Users\n" +
-                        "/nb | /nordbahn - Auskunft der aktuellen Fahrzeiten der Nordbahn für einen bestimmten Bahnhof\n" +
-                        "/shorten | /shorturl - Kürzen einer Url, die hinter dem Befehl angegeben wird\n" +
-                        "/translate - Übersetzt Wörter und ganze Sätze ins Deutsche\n" +
-                        "/temp | /temperature - Gibt die aktuelle Temperatur in einer Stadt\n" +
-                        "/luftfeuchtigkeit | /humidity - Gibt die aktuelle Luftfeuchtigkeit in einer Stadt zurück\n" +
-                        "/wind - Gibt aktuelle Wind-Daten einer Stadt zurück";
+                "/hilfe - Ausgeben aller verfügbaren Befehle\n" +
+                "/stop - Beim Bot abmelden\n" +
+                "/delete - Gespeicherte Daten löschen lassen\n" +
+                "/info - Ausgeben der gesamten gespeicherten Daten des Users\n" +
+                "/nb | /nordbahn - Auskunft der aktuellen Fahrzeiten der Nordbahn für einen bestimmten Bahnhof\n" +
+                "/shorten | /shorturl - Kürzen einer Url, die hinter dem Befehl angegeben wird\n" +
+                "/translate - Übersetzt Wörter und ganze Sätze ins Deutsche\n" +
+                "/temperatur | /temp - Gibt die aktuelle Temperatur in einer Stadt\n" +
+                "/luftfeuchtigkeit | /humidity - Gibt die aktuelle Luftfeuchtigkeit in einer Stadt zurück\n" +
+                "/wind - Gibt aktuelle Wind-Daten einer Stadt zurück\n" +
+                "/sichtweite | /sicht - Gibt die aktuelle Sichtweite in einer Stadt zurück\n" +
+                "/wiki | /lexikon - Gib einen Suchbegriff an und lasse dir die zugehörige Wikipedia-Seite anzeigen";
         assertEquals(actual, expected);
     }
 }
