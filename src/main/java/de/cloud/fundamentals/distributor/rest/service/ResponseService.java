@@ -14,8 +14,6 @@ public enum ResponseService {
     VISIBILITY("http://weather:8080/weather/visibility", Command.VISIBILITY),
     PRESSURE("http://weather:8080/weather/pressure", Command.PRESSURE),
     COORDINATES("http://weather:8080/weather/coordinates", Command.COORDINATES),
-    SUNRISE("http://weather:8080/weather/sunrise", Command.SUNRISE),
-    SUNSET("http://weather:8080/weather/sunset", Command.SUNSET),
     WIKI("http://wikipedia:8080/api", Command.WIKI);
 
     private final String url;
